@@ -1,0 +1,9 @@
+#!/bin/bash
+# this file will be overwritten by the project setup script
+SIMICS_BASE_PACKAGE="/home/danyazunigab/devTools/SimicsInstall/simics-6.0.185"
+export SIMICS_BASE_PACKAGE
+if [ -f "/home/danyazunigab/devWS/U/Empotrados/Proyecto2/academia-collaboration/simics-project/.package-list" ]; then
+    exec "/home/danyazunigab/devTools/SimicsInstall/simics-6.0.185/bin/simics-eclipse" --package-list "/home/danyazunigab/devWS/U/Empotrados/Proyecto2/academia-collaboration/simics-project/.package-list" --project "/home/danyazunigab/devWS/U/Empotrados/Proyecto2/academia-collaboration/simics-project" "$@"
+else
+    exec "/home/danyazunigab/devTools/SimicsInstall/simics-6.0.185/bin/simics-eclipse" --project "/home/danyazunigab/devWS/U/Empotrados/Proyecto2/academia-collaboration/simics-project" "$@"
+fi
